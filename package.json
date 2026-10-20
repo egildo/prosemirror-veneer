@@ -1,0 +1,29 @@
+{
+  "name": "prosemirror-veneer",
+  "version": "0.0.1",
+  "description": "A user's style exceptions over a ProseMirror document, as rules in a sheet of their own: the model in the doc, the selectors from its structure, the verbs as plain data",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "author": "Egildo Tagliareni",
+  "license": "MIT",
+  "peerDependencies": {
+    "prosemirror-model": "^1.0.0",
+    "prosemirror-state": "^1.0.0",
+    "prosemirror-transform": "^1.0.0"
+  },
+  "devDependencies": {
+    "prosemirror-model": "^1.25.11",
+    "prosemirror-state": "^1.4.4",
+    "prosemirror-transform": "^1.12.0",
+    "vitest": "^4.1.10"
+  }
+}
