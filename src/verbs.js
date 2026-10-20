@@ -23,7 +23,7 @@ export const veneerTypes = {
  */
 export const veneerCapabilities = ({ conventions = CONVENTIONS, families = () => null } = {}) => [
   {
-    id: 'veneer:add', label: 'Add a rule', section: 'veneer',
+    id: 'veneer:add', label: 'Add a rule',
     args: [{ name: 'key', type: 'string', required: true }, { name: 'declarations', type: 'declarations', required: true }, { name: 'name', type: 'string' }],
     command: ({ key, declarations, name }) => (state, dispatch) => {
       const option = candidates(state.doc, state.selection.from, conventions)?.options.find((o) => o.key === key);
@@ -35,7 +35,7 @@ export const veneerCapabilities = ({ conventions = CONVENTIONS, families = () =>
     }
   },
   {
-    id: 'veneer:rewrite', label: 'Rewrite a rule', section: 'veneer',
+    id: 'veneer:rewrite', label: 'Rewrite a rule',
     args: [{ name: 'id', type: 'string', required: true }, { name: 'declarations', type: 'declarations', required: true }],
     command: ({ id, declarations }) => (state, dispatch) => {
       if (!dispatch) return true;
@@ -44,7 +44,7 @@ export const veneerCapabilities = ({ conventions = CONVENTIONS, families = () =>
     }
   },
   {
-    id: 'veneer:remove', label: 'Remove a rule', section: 'veneer',
+    id: 'veneer:remove', label: 'Remove a rule',
     args: [{ name: 'id', type: 'string', required: true }, { name: 'property', type: 'string' }],
     command: ({ id, property }) => (state, dispatch) => {
       if (!dispatch) return true;
@@ -54,7 +54,7 @@ export const veneerCapabilities = ({ conventions = CONVENTIONS, families = () =>
   }
 ];
 
-/** What this package would call its verbs: a taste document a host seats or ignores. */
+/** What this package would call its verbs, and where it would seat them: a taste document a host seats or ignores (a host whose surfaces cannot supply the arguments leaves them unseated). */
 export const veneerTaste = {
   name: 'veneer',
   verbs: { 'veneer:add': { keywords: ['style', 'rule', 'amend'] }, 'veneer:rewrite': { keywords: ['style', 'rule', 'edit'] }, 'veneer:remove': { keywords: ['style', 'rule', 'delete'] } },
